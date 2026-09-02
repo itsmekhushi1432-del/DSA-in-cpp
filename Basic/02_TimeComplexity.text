@@ -1,0 +1,13 @@
+Time Complexity and Big O
+
+Time complexity --> study of efficiency of algorithms
+how time taken to execute an algorithm grows with the size of input
+input increases run time increases
+
+good algorithm --> take less time for a long program but can take more time for a small program 
+
+Big O --> O(n) is also O(n^2) is also O(n^3)
+Big O (industry) -->order of {minimum of these}
+
+Big O(1) = constant time
+Big O(n) = linear time

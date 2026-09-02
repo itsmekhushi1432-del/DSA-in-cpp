@@ -1,0 +1,18 @@
+
+Datastructure And Algorithms
+
+Datastructure -->  way to arrange data in main memory for efficient useage{ingredients to make algorithms}
+examples = arrays,stack,queue etc
+Algorithms --> sequence of steps to solve a given problem
+example = sorting an array 
+input = {1,31,2,0}
+output = {0,1,2,31}
+
+Database --> collection of information in permanent storage for faster retrievel and updation {HDD}
+Datawarehousing --> Management of huge amount of legacy data for better analysis
+Big Data --> Analysis of too large or complex data which cannot be dealt with traditional data processing
+
+c++ program running in memory
+stack memory ---> stack basically whenever a function is called it get its separate activation record or we can say memory and when the function has returned value or its work is done then the memory got cleared in the stack completely 
+heap memory ---> dynamic memory allocation using pointer {can request or can delete the memory according to your need}
+be careful while using heap as if you forgot to free the memory then memory leak condition will ocurred

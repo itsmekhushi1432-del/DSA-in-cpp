@@ -1,0 +1,13 @@
+// How To Calculate Time Complexity?
+
+------Tricks------>
+1. Drop the Non dominant terms
+2. Drop the Constant terms
+3. Break the code into fragments
+
+/// **** Time complexity = O(n) is separate for loops are presesnt
+and O(n^2) is nestes 2 for loops are present  ****///
+
+
+
+

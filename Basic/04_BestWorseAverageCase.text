@@ -1,0 +1,34 @@
+Best Case , Worse Case And Average Case of analysis
+
+Algo 1 =  sorted array = arr  = {1,5,7,9,24} --> n comparsion
+number a ? present in arr?
+a = 8 {0}  (compares a with every element)
+a = 9 {1}
+
+if it found in 1 chance
+best case --> O(1)
+worst case --> O(n)
+*****expected case / average case = O(sum of all possible runtimes/total number of possibilites)*****
+arr[5] = total possibilities = 6{n+1}
+avg case = (k+2k+3k......+nk)+nk/n+1
+sum till n number = k[n(n+1)/2 {sum of n number(AP)} + n(element not present in array)]/n+1
+-->k[n^2+2n]/2n+1 ----> where 2n is non dominant term remove this
+--->k[n(n+1)]/2(n+1) here n+1 get cancelled with each other also k/2 is constant removing this also we are now left with n only
+----> O(n)
+
+
+Algo 2 = sorted array = arr = {1,5,7,9,24}
+a = check first and last term 
+best case = O(1)
+
+a = mid term
+worst case = O(log(n)) { a big number how many times it can be halfed is log}
+
+main focus on worst case(as it define how good the algorithm is)
+
+//Space Complexity ---> Time is not the only thing we worry about while analyzing algorithms space is equally important
+ creating of array of n size = space complexity O(n)
+
+ quick quiz = calculate the space complexity of a functions which calculates factorial of a given number n
+ O(n)
+
