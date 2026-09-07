@@ -11,11 +11,12 @@ void bubbleSort(int arr[],int size){
     for (int i = 0; i < size-1; i++) //for iteration {or no of passes}
     {
         for (int j = 0; j < size-i-1; j++) //for actual work { loop will run till 
-        {                                  //size-i-1 because after every iteration and the
-            if(arr[j]>arr[j+1]){           //comparison is completed one element will get to its actual position}
+        {                                  //size-i-1 // After every pass, one largest element reaches its correct position,
+            if(arr[j]>arr[j+1]){            // so next pass needs one less comparison.
                 int temp = arr[j];
                 arr[j] = arr[j+1];
                 arr[j+1] = temp;
+                                          
             }                               
         }                                     
     }
