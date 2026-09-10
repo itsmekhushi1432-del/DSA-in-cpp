@@ -1,0 +1,32 @@
+/*Linked list --->A Linked List is a dynamic linear data structure in which each element 
+(called a node) stores data and the address of the next node. Unlike arrays, the elements
+are not stored in contiguous memory locations.
+
+A node is the basic building block of a linked list. It contains a data field and a 
+pointer to the next node.
+A node has two parts, not one.
+First Part → DATA
+This stores the actual value.
+Second Part → NEXT
+This stores the address of the next node.
+
+In a linked list, nodes can be anywhere in memory.
+They stay connected because each node stores the address of the next node.
+
+///Pointer---->A pointer is a special variable that stores the address of another variable.
+Memory Address--->A memory address is the location in RAM where a variable is stored.
+
+Syntax
+class Node
+{
+public:
+    int data;
+    Node* next;
+};
+Node* next is a pointer that stores the memory address of the next node in the linked list. 
+It is used to connect one node to another.
+
+Head Pointer ---> we need something that tells us where the linked list starts.
+That's the head pointer.
+
+*/
