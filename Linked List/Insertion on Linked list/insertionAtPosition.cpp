@@ -47,8 +47,8 @@ int main(){
     }
 
     // Insertion
-    newNode->next = temp->next;
-    temp->next = newNode;
+    newNode->next = temp->next; //to connect 25 with 30 the forward element
+    temp->next = newNode; //to connect 25 in linked list with previous element
 
     // Print Linked List
     temp = head;
