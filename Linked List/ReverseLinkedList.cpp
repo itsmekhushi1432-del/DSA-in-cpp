@@ -75,8 +75,7 @@ int main(){
         curr = next;// Move curr one step ahead
     }
     head = prev;//New head becomes last node
-    
-    
+
     //after reversing
     cout<<endl;
     cout<<"After Reversing List : "<<endl;

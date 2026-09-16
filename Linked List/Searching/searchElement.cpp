@@ -57,6 +57,5 @@ int main(){
         cout<<"Element not found."<<endl;
     }
 
-
     return 0;
 }
