@@ -71,7 +71,7 @@ int main(){
     {
         next = curr->next; //to save next node
         curr->next = prev; //to reverse or change arrow direction
-        prev = curr;//for firdt iteration 10 will became prev for next node
+        prev = curr;//for first iteration 10 will became prev for next node
         curr = next;// Move curr one step ahead
     }
     head = prev;//New head becomes last node
