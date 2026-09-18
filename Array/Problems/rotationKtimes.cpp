@@ -20,7 +20,7 @@ void leftRotate(int arr[], int n)
 // Function to rotate array left by K positions (Brute Force)
 void leftRotateByK(int arr[], int n, int k)
 {
-    k = k % n;   // Optimization
+    k = k % n;   // Optimization{basically if we rotation>size so to optimize that condition}
 
     for (int i = 0; i < k; i++)
     {
@@ -40,7 +40,6 @@ int main(){
     {
         cin>>arr[i];
     }
-    cout<<endl;
 
     int k;
     cout<<"Enter how many times you want to rotate the elements of array: "<<endl;
