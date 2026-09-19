@@ -1,4 +1,4 @@
-/*Rotate the element k times {Brute Force}*/
+/*Rotate the element k times left rotation {Brute Force}*/
 
 #include<iostream>
 
