@@ -3,7 +3,7 @@
 #include<iostream>
 
 using namespace std;
-
+//Time Complexity = O(n) and Space Complexity = O(1)
 //function to rotate only one time
 void rightRotation(int arr[],int n){
     //store current element
@@ -18,6 +18,7 @@ void rightRotation(int arr[],int n){
 //function to rotate k times
 void rightRotationByK(int arr[],int n,int k){
 
+    k = k%n; //optimization
     for (int i = 0; i < k; i++)
     {
         rightRotation(arr,n);
