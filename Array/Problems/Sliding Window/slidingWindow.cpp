@@ -33,6 +33,13 @@ using namespace std;
 
 void maximumSum(int arr[],int n, int k){
 
+    //to check whether window number is valid or not
+    if (k>n)
+    {
+        cout<<"Enter valid size!!"<<endl;
+        return;
+    }
+    
     int windowSum = 0; //first window sum
 
     for (int i = 0; i < k; i++)
