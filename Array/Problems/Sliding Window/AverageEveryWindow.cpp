@@ -9,7 +9,7 @@ using namespace std;
 
 void AverageWindow(int arr[],int n,int k){
     //window size valid
-    if(k>n){
+    if(k<=0 || k>n){
         cout<<"Enter valid window size!"<<endl;
         return;
     }
@@ -24,6 +24,7 @@ void AverageWindow(int arr[],int n,int k){
 
     //average of the first window sum
     cout<<"Average of window 1: "<<(float)windowSum/k<<endl;
+    int windowNumber = 2;
 
     //slide the window
     for (int i = k; i < n; i++)
@@ -32,7 +33,8 @@ void AverageWindow(int arr[],int n,int k){
         windowSum = windowSum - arr[i-k]+arr[i];
 
         //printing average of current window
-        cout<<"Average of window"<<i+k<<" : "<<(float)windowSum/k<<endl;
+        cout<<"Average of window "<<windowNumber<<" : "<<(float)windowSum/k<<endl;
+        windowNumber++;
     }
 }
 

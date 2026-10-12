@@ -10,7 +10,7 @@ using namespace std;
 void minimumSum(int arr[], int n, int k)
 {
     // To check whether the window size is valid or not 
-    if(k > n)
+    if(k <= 0 || k > n)
     {
         cout<<"Invalid Window Size!"<<endl;
         return;

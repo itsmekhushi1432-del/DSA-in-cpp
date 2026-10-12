@@ -34,7 +34,7 @@ using namespace std;
 void maximumSum(int arr[],int n, int k){
 
     //to check whether window number is valid or not
-    if (k>n)
+    if (k<=0 || k>n)
     {
         cout<<"Enter valid size!!"<<endl;
         return;
