@@ -41,6 +41,13 @@ class Node{
         }
 };
 
+/*Time Complexity
+- Best Case: O(n)
+- Worst Case: O(n)
+
+Space Complexity
+O(1)*/
+
 int main(){
     
     Node* head = NULL;
