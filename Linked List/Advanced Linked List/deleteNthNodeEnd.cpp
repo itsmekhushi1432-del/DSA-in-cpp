@@ -94,6 +94,7 @@ int main()
         fast = fast->next;
     }
 
+    //special case :- head node
     // Delete Head Node
 
     if(fast == NULL)
@@ -115,11 +116,11 @@ int main()
 
         // Delete Nth node
 
-        Node* del = slow->next;
+        Node* del = slow->next; //one node before the actual that we want to delete
 
-        slow->next = slow->next->next;
+        slow->next = slow->next->next; //link previous to the deletion one's next
 
-        delete del;
+        delete del; //delete the node
     }
 
     cout << "Updated List : " << endl;
