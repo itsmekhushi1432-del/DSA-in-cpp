@@ -56,13 +56,31 @@ int main(){
     cout<<"Doubly Linked List....."<<endl;
 
     //forward traversal
-    cout<<"Forward Traversal: ";
+    cout<<"Forward Traversal-------->";
 
     Node* temp = head;
     while(temp!=NULL){
         cout<<temp->data<<" ";
         temp = temp->next;
     }
+    cout<<endl;
 
+    //Backward Traversal
+    /*Find last node then start printing from last using prev pointer
+    */
+    cout<<"Backward Traversal------->";
+    temp = head;
+    while (temp->next!=NULL)
+    {
+        temp = temp->next;
+    }
+
+    //now temp is exactly at last node not traverse backward
+    while (temp!=NULL)
+    {
+        cout<<temp->data<<" ";
+        temp = temp->prev;//move backward
+    }
+    
     return 0;
 }
