@@ -75,7 +75,8 @@ int main(){
         temp = temp->next;
     }
 
-    //now temp is exactly at last node not traverse backward
+    //now temp is exactly at last node 
+    // traverse backward using prev pointer
     while (temp!=NULL)
     {
         cout<<temp->data<<" ";
