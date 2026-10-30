@@ -33,7 +33,7 @@ int main(){
     Node* head = NULL;
 
     Node* first = new Node(10);
-    head = first; //head is moved to new first node now
+    head = first; //head points to first node
 
     Node* second = new Node(20);
     first->next = second;
@@ -63,7 +63,7 @@ int main(){
     Node* newNode = new Node(5); //new node to be inserted
     if (head == NULL) //empty linked list
     {
-        head = newNode; //first node;
+        head = newNode; //newNode become the first node
     }else{
 
         newNode->next = head;//connection with existing linked list
