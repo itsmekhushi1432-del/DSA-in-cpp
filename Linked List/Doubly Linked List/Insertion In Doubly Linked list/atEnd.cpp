@@ -57,7 +57,7 @@ int main(){
     fourth->next = fifth;
     fifth->prev = fourth;
 
-    cout<<"Doubly Linked List Before Insertion ";
+    cout<<"Doubly Linked List Before Insertion: ";
 
     Node* temp = head;
     while (temp!=NULL)
@@ -76,15 +76,16 @@ int main(){
     }else{
         temp = head;
 
+        //reach last second node
         while (temp->next!=NULL)
         {
             temp = temp->next;
         }
-        temp->next = newNode;
+        temp->next = newNode; //connect last second with the last node
         newNode->prev = temp;
         
     }
-    cout<<"Doubly Linked List After Insertion At End ";
+    cout<<"Doubly Linked List After Insertion At End: ";
     temp = head;
     while (temp!=NULL)
     {
