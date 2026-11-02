@@ -35,7 +35,7 @@ int main(){
     Node* tail = NULL;//tail points to the last node
 
     int n;
-    cout<<"Enter the number of nodes: ";
+    cout<<"Enter the number of Nodes: ";
     cin>>n;
 
     for (int i = 1; i <= n; i++)
