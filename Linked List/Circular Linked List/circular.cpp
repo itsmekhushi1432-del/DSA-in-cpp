@@ -1,57 +1,78 @@
-/*A Circular Linked List is a linked list in which the last node points back to the first node instead of NULL.
-*/
+/*A Circular Linked List is a linked list in which the last node points back to the first node 
+instead of NULL.
+
+Creating a list dynamically (user input or loop) → head + tail is the easiest and most efficient 
+approach.
+
+If you need quick access to the last node, keep a tail pointer. Otherwise, head alone is enough.*/
 
 #include<iostream>
 
 using namespace std;
 
 //using struct
-struct Node
+class Node
 {
-    int data;
-    Node* next;
+    public:
+        int data;
+        Node* next;
+
+        Node(int value){
+            data = value;
+            next = NULL;
+        }
 };
 
 int main(){
     
-    Node* first = new Node;
-    Node* second = new Node;
-    Node* third = new Node;
-    Node* fourth = new Node;
-    Node* fifth = new Node;
+    Node* head = NULL;
+    Node* tail = NULL;
 
-    Node* head = first;
+    int n;
+    cout<<"Enter number of Nodes: ";
+    cin>>n;
 
-    first->data = 10;
-    first->next = second;
-
-    second ->data = 20;
-    second->next = third;
-
-    third->data = 30;
-    third->next = fourth;
-
-    fourth->data = 40;
-    fourth->next = fifth;
-
-    fifth->data = 50;
-    fifth->next = head;
-
-    Node* temp = head;
-    /* while (temp!=NULL)  can not use this as temp never became null it will be infinite loop
+    for (int i = 1; i <= n; i++)
     {
-        cout<<temp->data<<" ";
-        temp = temp->next;
-    } */
+        int x;
+        cout<<"Enter the value of Node "<<i<<":";
+        cin>>x;
+
+        Node* newNode = new Node(x);
+
+        //if list is empty
+        if (head == NULL)
+        {
+            head = newNode;
+            tail = newNode;
+        }else{
+            tail->next = newNode;
+            tail = newNode;
+        }
+        
+    }
+
+    //connecting last node with head to make it circular list
+    if (head != NULL)
+    {
+        tail->next = head;
+    }
+
+    //checking if list is empty
+    if (head == NULL)
+    {
+        cout<<"Empty List...";
+        return 0;
+    }
     
+    //printing of the linked list
+    Node* temp = head;
     do
     {
         cout<<temp->data<<" ";
         temp = temp->next;
-    } while (temp!=head);
-    
 
+    } while(temp != head);
     
-
     return 0;
 }
