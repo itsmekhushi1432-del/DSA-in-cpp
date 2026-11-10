@@ -1,100 +1,76 @@
-/*Insertion at begining of circular linked list
+/* Insertion at Begining in circular linked list*/
 
-1. Create a new node.
-2. Store the current head in newNode->next.
-3. Traverse to the last node.
-4. last->next = newNode.
-5. head = newNode.*/
+#include<iostream>
 
-#include <iostream>
 using namespace std;
 
-struct Node
-{
-    int data;
-    Node* next;
+class Node{
+    public:
+        int data;
+        Node* next;
+
+        Node(int value){
+            data = value;
+            next = NULL;
+        }
 };
 
-// Display Circular Linked List
-void display(Node* head)
-{
-    if(head == NULL)
+//input
+void createList(Node* &head, Node* &tail){
+    int n;
+    cout<<"Enter size of Node: ";
+    cin>>n;
+
+    for (int i = 1; i <= n; i++)
     {
-        cout << "List is Empty";
-        return;
+        int x;
+        cout<<"Enter value of Node "<<i<<": ";
+        cin>>x;
+
+        Node* newNode = new Node(x);
+
+        //check whether list is empty or not
+        if(head == NULL){
+            head = newNode;
+            tail = newNode;
+        }else{
+            tail->next = newNode;
+            tail = newNode;
+        }
     }
 
-    Node* temp = head;
+    //connecting last node with head
+    if(head != NULL){
+        tail->next = head;
+    }
+}
 
+
+//print list
+void printList(Node* head){
+    Node* temp = head;
     do
     {
-        cout << temp->data << " ";
+        cout<<temp->data<<" ";
         temp = temp->next;
-
-    } while(temp != head);
-
-    cout << endl;
+    } while (temp != head);
+    
 }
 
-// Insertion at Beginning
-void insertAtBeginning(Node* &head, int value)
-{
-    // Create new node
-    Node* newNode = new Node;
-
-    newNode->data = value;
-
-    // If list is empty
-    if(head == NULL)
-    {
-        newNode->next = newNode;
-        head = newNode;
-        return;
-    }
-
-    // Find the last node
-    Node* temp = head;
-
-    while(temp->next != head)
-    {
-        temp = temp->next;
-    }
-
-    // Insert at beginning
-    newNode->next = head;
-    temp->next = newNode;
-    head = newNode;
+//insert at begining
+void insertAtBegining(){
+    
 }
+int main(){
+    
+    Node* head = NULL;
+    Node* tail = NULL;
 
-int main()
-{
-    // Creating Circular Linked List
-    Node* first = new Node;
-    Node* second = new Node;
-    Node* third = new Node;
-    Node* fourth = new Node;
+    //create list
+    createList(head,tail);
 
-    Node* head = first;
-
-    first->data = 10;
-    first->next = second;
-
-    second->data = 20;
-    second->next = third;
-
-    third->data = 30;
-    third->next = fourth;
-
-    fourth->data = 40;
-    fourth->next = head;   // Make it Circular
-
-    cout << "Before Insertion:\n";
-    display(head);
-
-    insertAtBeginning(head, 5);
-
-    cout << "\nAfter Insertion:\n";
-    display(head);
+    //print list
+    printList(head);
 
     return 0;
 }
