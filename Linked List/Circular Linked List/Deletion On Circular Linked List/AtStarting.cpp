@@ -65,6 +65,48 @@ void createList(Node* &head, Node* &tail){
 }
 
 //print
+void displayList(Node* head){
+    Node* temp = head;
+    if (head == NULL)
+    {
+        cout<<"List Empty....";
+        return;
+    }
+    do
+    {
+        cout<<temp->data<<" ";
+        temp = temp->next;
+    } while (temp != head);
+}
+
+//delete node
+void deleteList(Node* &head){
+    
+    //if list is empty
+    if (head == NULL)
+    {
+        cout<<"List Empty....Nothing to delete";
+        return;
+    }
+
+    //if only 1 node is present
+    if (head->next == head)
+    {
+        Node* temp = head;
+        head = NULL;
+        delete temp;
+        return;
+    }
+
+    //for more than 1 node
+    Node* temp = head;
+    while (temp->next != head)
+    {
+        temp = temp->next;
+    }
+    temp->next = head;
+    delete temp;
+}
 
 int main(){
     
@@ -73,6 +115,15 @@ int main(){
 
     //create list
     createList(head,tail);
+
+    //print list
+    displayList(head);
+
+    //delete
+    deleteList(head);
+
+    //print updated list
+    displayList(head);
     
     return 0;
 }
