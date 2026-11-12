@@ -1,24 +1,19 @@
-/* Deletion at Beginning in Circular Linked List
-
+/*Deletion at End in Circular Linked List 
 Logic:
 
-1. Check whether the list is empty.
-2. If there is only one node:
-      - Delete the node.
-      - Set head = NULL.
-3. Otherwise:
-      - Store the first node.
-      - Find the last node.
-      - Move head to the next node.
-      - Update last->next = head.
-      - Delete the old head.
+Case 1: List is Empty
+Case 2: Only One Node
+Case 3: More Than One Node
+1. Traverse to the second last node.
+2. Store the last node.
+3. Connect the second last node to the head.
+4. Delete the last node.
 
-Time Complexity  : O(n)
-Reason : We traverse the list to reach the last node.
+Time Complexity : O(n)
+Reason : We traverse the list to reach the second last node.
 
 Space Complexity : O(1)
-Reason : Only a few pointer variables are used.
-*/
+Reason : Only a few pointer variables are used.*/
 
 #include<iostream>
 
@@ -33,11 +28,10 @@ class Node{
             data = value;
             next = NULL;
         }
-
 };
 
-//create list
-void createList(Node* &head, Node* &tail){
+//create circular linked list
+void createlist(Node* &head, Node* &tail){
     int n;
     cout<<"Enter size of Nodes: ";
     cin>>n;
@@ -45,7 +39,7 @@ void createList(Node* &head, Node* &tail){
     for (int i = 1; i <= n; i++)
     {
         int x;
-        cout<<"Enter value of Node "<<i<<":";
+        cout<<"Enter the value of Node "<<i<<":";
         cin>>x;
 
         Node* newNode = new Node(x);
@@ -61,17 +55,23 @@ void createList(Node* &head, Node* &tail){
         }
         
     }
-    
+    //connect last node with head
+    if (head != NULL)
+    {
+        tail->next = head;
+    } 
 }
 
-//print
-void displayList(Node* head){
+//print list
+void displaylist(Node* head){
     Node* temp = head;
+
     if (head == NULL)
     {
-        cout<<"List Empty....";
+        cout<<"Empty List..";
         return;
     }
+
     do
     {
         cout<<temp->data<<" ";
@@ -80,16 +80,15 @@ void displayList(Node* head){
 }
 
 //delete node
-void deleteList(Node* &head){
-    
+void deleteNode(Node* &head){
     //if list is empty
     if (head == NULL)
     {
-        cout<<"List Empty....Nothing to delete";
+        cout<<"Empty list. Nothing to Delete...";
         return;
     }
 
-    //if only 1 node is present
+    //if only one node
     if (head->next == head)
     {
         Node* temp = head;
@@ -97,33 +96,33 @@ void deleteList(Node* &head){
         delete temp;
         return;
     }
-
-    //for more than 1 node
+    //more than one node
     Node* temp = head;
-    while (temp->next != head)
+    while (temp->next->next != head)
     {
         temp = temp->next;
     }
+
+    Node* deleteNode = temp->next;
     temp->next = head;
-    delete temp;
+    delete deleteNode;
 }
 
 int main(){
-    
     Node* head = NULL;
     Node* tail = NULL;
 
     //create list
-    createList(head,tail);
+    createlist(head,tail);
 
-    //print list
-    displayList(head);
+    //display list
+    displaylist(head);
 
-    //delete
-    deleteList(head);
+    //delete node
+    deleteNode(head);
 
-    //print updated list
-    displayList(head);
+    //updated list
+    displaylist(head);
     
     return 0;
 }
